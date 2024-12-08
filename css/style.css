@@ -1,0 +1,463 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+:root{
+  --main-color:crimson;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+.full-container {
+  width: 97%;
+  margin: auto;
+}
+
+.btn{
+  border:solid 2px var(--main-color);
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  position: relative;
+}
+
+.btn::after{
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: var(--main-color);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn:hover::after{
+  width: 100%;
+}
+
+.section-title{
+  padding: 150px 0 60px ;
+  text-align: center;
+  font-size: 55px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.section-title span{
+  color: var(--main-color);
+}
+
+.scroll-header{
+  background-color: rgb(41, 50, 60);
+}
+
+/****** start header ******/
+
+header{
+  padding: 12px 0;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100vw;
+  transition: all 0.4s;
+}
+
+header .full-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo h1{
+  color: white;
+  font-weight: bolder;
+}
+
+header .logo h1 span{
+  color: var(--main-color);
+}
+
+header .full-container ul{
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+header .full-container ul li{
+  padding: 0 25px;
+}
+
+header .full-container ul li a{
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+header .full-container ul li:hover a{
+  color: var(--main-color);
+}
+
+
+/****** start Home section ******/
+.Home{
+  background-image: url(/img/hero-bg.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+	background-position: top center;
+	position: relative;
+  top: 0;
+	z-index: 1;
+}
+
+.Home .container{
+  width: 83%;
+}
+
+.Home::after{
+  content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+.Home .container .text{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Home .container .text h1{
+  font-size: 60px;
+  color: white;
+  font-weight: 1000;
+  margin: 15px 0;
+}
+
+.Home .container .text h1:last-of-type{
+  color: var(--main-color);
+}
+
+/****** start Services section ******/
+
+.Services .p-title{
+  text-align: center;
+  width: 550px;
+  margin: auto;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8rem;
+  margin-bottom: 50px;
+}
+
+.Services .full-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap: 20px;
+}
+
+.Services .full-container .item{
+  background-image: url(/img/download.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+	background-position: top center;
+	position: relative;
+  padding:30px 20px ;
+  border-radius: 20px;
+}
+
+.Services .full-container .item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  opacity: 0.9;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+
+.Services .full-container .item div{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 2;
+}
+
+.Services .full-container .item img{
+  width: 100px;
+  height: 100px;
+}
+
+.Services .full-container .item h2{
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.Services .full-container .item p{
+  color: white;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+
+/****** start Projects section ******/
+
+.Projects .container .project{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+}
+
+
+.Projects .container .project .text{
+  padding: 30px;
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: white;
+}
+
+.Projects .container .project .text h2{
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.Projects .container .project .text h4{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.Projects .container .project .text p{
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.4rem;
+}
+
+.Projects .container .project .img{
+  flex-basis: 50%;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+}
+
+.Projects .container .project .img::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  opacity: 0.7;
+}
+
+.Projects .container .project .img img{
+  transition: all 0.4s;
+}
+
+.Projects .container .project .img:hover img{
+  transform: scale(1.1);
+}
+
+
+/****** start About section ******/
+
+
+.About .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.About .container .img{
+  width: 30%;
+  height: 400px;
+  border: solid 16px white;
+  position: relative;
+}
+
+.About .container .img::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30px;
+  left: -40px;
+  border: solid 9px var(--main-color) ;
+  z-index: -1;
+}
+
+.About .container .text{
+  width: 65%;
+}
+
+.About .container .text h2{
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.About .container .text p{
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+.About .container .text .btn{
+  color: black;
+  font-size: 1.3rem;
+  padding: 10px 18px;
+
+}
+
+
+
+
+
+
+.Contact .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(310px,1fr));
+  gap: 30px;
+  margin-bottom:90px;
+}
+
+.Contact .container .item{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  box-shadow: 0px 0px 18px 0 #0000002c;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.Contact .container .item img{
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+}
+
+.Contact .container .item h5{
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+.Contact .container .item:hover  {
+  box-shadow: 0px 0px 5px 0 #0000002c;
+}
+
+
+
+footer{
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  text-align: center;
+  padding: 50px 0;
+}
+
+footer h2{
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 25px;
+}
+
+footer h2 span{
+  color: var(--main-color);
+}
+
+footer p{
+  color: white;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+
+footer .icons{
+  margin-top: 50px;
+}
+
+footer .icons a {
+  padding: 15px;
+  margin:  0  10px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s;
+}
+
+footer .icons a:nth-of-type(1){
+  background-color: #1877f2;
+}
+
+footer .icons a:nth-of-type(2){
+  background-color: #004182;
+}
+
+footer .icons a:nth-of-type(3){
+  background-color: #075e54;
+}
+
+footer .icons a i{
+  font-size: 19px;
+}
